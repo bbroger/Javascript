@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Desafio 01</title>
+    <style>
+      .btn {
+        border: 0;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 25px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: white;
+        background-color: blueviolet;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <button class="btn">Criar novo elemento</button>
+      <br />
+    </div>
+    <script>
+      var buttonElement = document.querySelector("#app button");
+      var containerElement = document.querySelector("#app");
+      buttonElement.onclick = () => {
+        var box = document.createElement("div");
+        box.style.width = "100px";
+        box.style.height = "100px";
+        box.style.backgroundColor = "#2f3542";
+        box.style.display = "inline-block";
+        box.style.margin = "10px";
+        containerElement.appendChild(box);
+      };
+    </script>
+  </body>
+</html>

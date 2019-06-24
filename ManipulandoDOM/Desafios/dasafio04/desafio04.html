@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Desafio 04</title>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .btn {
+        border: 0;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 25px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: white;
+        background-color: blueviolet;
+        cursor: pointer;
+      }
+      input {
+        height: 38px;
+        border: 0;
+        background-color: #fafaff;
+        box-shadow: 1px 1px 1px #ededed inset;
+        font-size: 14px;
+        color: blueviolet;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      h1 {
+        color: blueviolet;
+        font-weight: 800;
+      }
+      ul {
+        padding: 0;
+      }
+      ul li {
+        font-size: 16px;
+        color: blueviolet;
+        line-height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" />
+      <button class="btn">Adicionar</button>
+      <h1>Lista de nomes</h1>
+    </div>
+    <script>
+      var nomes = ["Diego", "Gabriel", "Lucas"];
+      var containerElement = document.querySelector("#app");
+      var buttonElement = document.querySelector("#app button");
+      var ul = document.createElement("ul");
+      function listaNomes(lista) {
+        lista.forEach(nome => {
+          var li = document.createElement("li");
+          li.innerText = `${nome}`;
+          ul.appendChild(li);
+        });
+
+        containerElement.appendChild(ul);
+      }
+
+      listaNomes(nomes);
+
+      buttonElement.onclick = () => {
+        ul.innerText = "";
+        function adicionar(lista) {
+          var inputElement = document.querySelector("#app input");
+          if (inputElement.value === "") {
+            alert("Informe um valor");
+          } else {
+            var nome = inputElement.value;
+            lista.push(nome);
+            listaNomes(nomes);
+            inputElement.value = "";
+          }
+        }
+        adicionar(nomes);
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Desafio 03</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      var nomes = ["Diego", "Gabriel", "Lucas"];
+      var app = document.querySelector("#app");
+      function listaNomes(lista) {
+        var ul = document.createElement("ul");
+        lista.forEach(nome => {
+          var li = document.createElement("li");
+          li.innerText = `${nome}`;
+          ul.appendChild(li);
+        });
+
+        app.appendChild(ul);
+      }
+      listaNomes(nomes);
+    </script>
+  </body>
+</html>
